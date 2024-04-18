@@ -11,9 +11,9 @@ export class ValidationFilter extends BaseExceptionFilter {
       const errors = exception.getResponse()['message'];
       // Customize the response format
       const formattedErrors = errors.map((errorString: string) => {
-        const firstSpaceIndex = errorString.indexOf(' '); // Tìm vị trí của dấu cách đầu tiên trong chuỗi
-        const attribute = errorString.slice(0, firstSpaceIndex); // Lấy phần từ đầu tiên từ đầu chuỗi đến dấu cách đầu tiên
-        const message = errorString.slice(firstSpaceIndex + 1); // Lấy phần còn lại của chuỗi sau dấu cách đầu tiên
+        const firstSpaceIndex = errorString.indexOf(' ');
+        const attribute = errorString.slice(0, firstSpaceIndex);
+        const message = errorString.slice(firstSpaceIndex + 1);
         return { attribute, message };
       });
 
